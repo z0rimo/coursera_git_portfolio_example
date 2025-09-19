@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Your Name</title>
+  <meta name="description" content="Portfolio website of Your Name. Projects, skills, contact." />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- For better icons if you add any later -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Skip to Content for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Homepage">YN</a>
+
+      <button id="menuButton" class="menu-button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav id="siteNav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about" aria-current="page">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+              🌙
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main" role="main">
+    <!-- Hero -->
+    <section class="hero container" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <h1 id="heroTitle">Hi, I’m <span class="accent">Your Name</span>.</h1>
+        <p class="lead">
+          I build delightful, accessible web experiences. Here are some of my recent projects and what I’ve been
+          learning.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/hero-illustration.png" alt="Abstract illustration representing web development" />
+        <figcaption class="sr-only">Hero illustration</figcaption>
+      </figure>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About</h2>
+      <p>
+        I’m a front-end developer focused on building performant, inclusive interfaces. I enjoy TypeScript, React,
+        accessibility, and crafting systems that scale. I’m currently exploring animations, data viz, and testing
+        best practices.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container" aria-labelledby="projectsTitle">
+      <div class="section-header">
+        <h2 id="projectsTitle">Projects</h2>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <label for="filterSelect" class="sr-only">Filter by tag</label>
+          <select id="filterSelect" aria-label="Filter projects by tag">
+            <option value="all">All</option>
+            <option value="web">Web</option>
+            <option value="ui">UI</option>
+            <option value="data">Data</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid projects-grid" id="projectsGrid">
+        <!-- Project Card 1 -->
+        <article class="card project" data-tags="web ui" tabindex="0">
+          <img src="assets/project-1.jpg" alt="Screenshot of Project One homepage" />
+          <div class="card-body">
+            <h3>Project One</h3>
+            <p>Responsive marketing site with semantic HTML, CSS grid, and accessible components.</p>
+            <a class="btn small" href="#" aria-label="Open Project One in new tab">Live</a>
+            <a class="btn small ghost" href="#" aria-label="Open Project One code repository in new tab">Code</a>
+          </div>
+        </article>
+
+        <!-- Project Card 2 -->
+        <article class="card project" data-tags="web data" tabindex="0">
+          <img src="assets/project-2.jpg" alt="Dashboard visualization for Project Two" />
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>Data dashboard with interactive charts and keyboard-navigable controls.</p>
+            <a class="btn small" href="#" aria-label="Open Project Two in new tab">Live</a>
+            <a class="btn small ghost" href="#" aria-label="Open Project Two code repository in new tab">Code</a>
+          </div>
+        </article>
+
+        <!-- Project Card 3 -->
+        <article class="card project" data-tags="ui" tabindex="0">
+          <img src="assets/project-3.jpg" alt="Component library preview for Project Three" />
+          <div class="card-body">
+            <h3>Project Three</h3>
+            <p>Design system components with focus states, color tokens, and motion rules.</p>
+            <a class="btn small" href="#" aria-label="Open Project Three in new tab">Live</a>
+            <a class="btn small ghost" href="#" aria-label="Open Project Three code repository in new tab">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container" aria-labelledby="skillsTitle">
+      <h2 id="skillsTitle">Skills</h2>
+      <ul class="skills">
+        <li><span>HTML5</span></li>
+        <li><span>CSS3 / Sass</span></li>
+        <li><span>JavaScript / TypeScript</span></li>
+        <li><span>React</span></li>
+        <li><span>Accessibility (a11y)</span></li>
+        <li><span>Responsive Design</span></li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact</h2>
+      <form class="contact-form" aria-describedby="contactHelp" novalidate>
+        <p id="contactHelp" class="form-help">All fields are required.</p>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+
+        <button class="btn primary" type="submit" aria-label="Send message">Send</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Your Name</p>
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>
